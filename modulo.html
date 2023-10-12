@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jardignomo</title>
+  <style>
+    /* Estilos globales */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos del encabezado */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #eee;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    /* Estilos del menú de navegación */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    /* Estilos para el menú de navegación pegajoso */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background-color: #388E3C;
+      z-index: 100;
+    }
+
+    .sticky-nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #388E3C;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .sticky-nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    .sticky-nav ul li a {
+      text-decoration: none;
+      color: #1B5E20;
+      font-weight: bold;
+    }
+
+    .sticky-nav ul li a:hover {
+      color: #fff;
+    }
+
+    /* Estilos de la barra de búsqueda y carrito */
+    .search-and-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #eee;
+    }
+
+    .search-and-cart form {
+      display: flex;
+      align-items: center;
+      order: 2;
+    }
+
+    .search-and-cart input[type="text"] {
+      border: 1px solid #000;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .search-and-cart input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .search-and-cart a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      order: 1;
+    }
+
+    /* Estilos del contenido principal */
+    main {
+      padding: 1rem;
+    }
+
+    /* Estilos de los contenedores */
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .subcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    /* Eliminamos el borde */
+  }
+
+  .subcontainer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    /* Establecemos un ancho máximo para las imágenes */
+    max-width: 100%; /* Puedes ajustar el valor según tus necesidades */
+  }
+
+    /* Estilos para el pie de página */
+    footer {
+      text-align: center;
+      background-color: #1B5E20;
+      color: #fff;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jardignomo</h1>
+    <h1>Ekotek</h1>
+  </header>
+  <!-- Menú de navegación pegajoso -->
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="Tienda.html">Tienda</a></li>
+      <li><a href="Guias.html">Guías</a></li>
+      <li><a href="soporte.html">Soporte</a></li>
+      <li><a href="#seccion-contacto">Contáctanos</a></li>
+    </ul>
+  </nav>
+  <div class="search-and-cart">
+    <a href="/cart">Carrito</a>
+    <form action="/search">
+      <input type="text" name="q" placeholder="Buscar">
+      <input type="submit" value="Buscar">
+    </form>
+  </div>
+  <main>
+    <div class="container">
+      <div class="subcontainer">
+        <a href="jardignomo mini.html">
+          <img src="img tienda/9 Img Tienda (Jardig-Módulos) Jardig Mini.png" alt="">
+        </a>
+      </div>
+      <div class="subcontainer">
+        <a href="/subpage2">
+          <img src="img tienda/9 Img Tienda (Jardig-Módulos) Jardig Pro.png" alt="Subpágina 2">
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="subcontainer">
+        <a href="/subpage3">
+          <img src="img tienda" alt="Subpágina 3">
+        </a>
+      </div>
+      <div class="subcontainer">
+        <a href="/11">
+          <img src="img tienda/9 Img Tienda (Jardig-Módulos) Carcasas y Bases.png" alt="Subpágina 4">
+        </a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright 2023 EkoTek. Todos los derechos reservados.</p>
+    <p>EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+    <a href="/privacy">Avisos de privacidad</a>
+    <a href="/terms">Términos de servicio</a>
+    <a href="/contact">Contáctanos</a>
+  </footer>
+</body>
+</html>
+
+

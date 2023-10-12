@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Guías - EkoTek</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #E0F2F1, #279E1E);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        /* Barra de navegación (menú) */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #279E1E;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #1B5E20;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #388E3C;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Títulos para Jardignomo y EkoTek */
+        .header-h1,
+        .header-h2 {
+            font-size: 24px;
+        }
+
+        .header-h1 a,
+        .header-h2 a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Estilo para el botón de búsqueda */
+        .search-button {
+            background-color: #228B22;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Contenedor principal del menú de búsqueda y el menú desplegable */
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Contenedor del menú de búsqueda */
+        .search-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el menú desplegable */
+        .select-container {
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        /* Estilos para el menú desplegable (etiqueta) */
+        .select-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Estilos para el menú desplegable (select) */
+        .select-dropdown {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Estilos para el menú desplegable cuando se pasa el cursor por encima */
+        .select-dropdown:hover {
+            border-color: #228B22;
+        }
+
+        /* Estilos para las opciones del menú desplegable */
+        .select-dropdown option {
+            padding: 10px;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer-container {
+            background-color: #279E1E;
+            color: #fff;
+            padding: 20px;
+        }
+
+        /* Footer Texto */
+        footer {
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <div class="header-h1"><a href="#">Jardignomo</a></div>
+        <div class="header-h2"><a href="#">EkoTek</a></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../Sitio sin nombre 2/index.html">Inicio</a></li>
+            <li><a href="../Sitio sin nombre 2/Tienda.html">Tienda</a></li>
+            <li><a href="Guias.html">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Contenedor para el menú de búsqueda y el menú desplegable -->
+        <div class="menu-container">
+            <!-- Contenedor para el menú de búsqueda -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </div>
+
+            <!-- Contenedor para el menú desplegable -->
+            <div class="select-container">
+                <label for="preguntas">Selecciona una opción:</label>
+                <select id="preguntas" name="preguntas" class="select-dropdown">
+                    <option value="" disabled selected>Elige una opción</option>
+                    <option value="opcion1">¿Cuál es tu color favorito?</option>
+                    <option value="opcion2">¿Cuál es tu comida favorita?</option>
+                    <option value="opcion3">¿Cuál es tu película favorita?</option>
+                    <option value="opcion4">¿Cuál es tu libro favorito?</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor para el footer -->
+    <div class="footer-container">
+        <footer>
+            <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+
+

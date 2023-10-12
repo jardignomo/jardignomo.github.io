@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Configuración del encabezado de la página -->
+    <meta charset="utf-8"> <!-- Define la codificación de caracteres de la página -->
+    <title>Tienda</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
+    
+    <style>
+        /* Estilos CSS para la página web */
+
+        /* Estilo para el encabezado */
+        header {
+            background-color: #eee; /* Fondo verde */
+            padding: 20px 0; /* Espaciado superior e inferior */
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilos para Título producto(Jardignomo) y Empresa (Ekotek) */
+        header h1,
+        .header-h2 {
+            margin-top: 0.5px;
+            color: #000000; /* Color naranja para Jardignomo */
+        }
+
+        .header-h2 {
+            color: #000000; /* Color azul para EkoTek */
+        }
+
+        /* Estilos para el menú pegajoso */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: #388E3C; /* Fondo verde */
+            z-index: 100;
+        }
+
+        /* Estilos para el barra de navegación (menú) */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #388E3C; /* Fondo verde */
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1B5E20; /* Color verde oscuro */
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #fff; /* Cambio de color al pasar el cursor */
+        }
+
+ /* Estilos de la barra de búsqueda y carrito */
+    .search-and-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #eee;
+    }
+
+    .search-and-cart form {
+      display: flex;
+      align-items: center;
+      order: 2;
+    }
+
+    .search-and-cart input[type="text"] {
+      border: 1px solid #000;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .search-and-cart input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .search-and-cart a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      order: 1;
+    }
+
+
+        /* Estilo para los botones dentro del contenedor */
+.custom-button {
+    background-color: #32CD32; /* Color verde lima */
+    text-align: center;
+    padding: 10px 20px; /* Espaciado interior */
+    border-radius: 5px;
+    margin: 10px;
+    flex: 1;
+    transition: background-color 0.3s; /* Transición de color al pasar el cursor */
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-button a {
+    text-decoration: none;
+    color: #fff; /* Color de texto blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-button img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.custom-button h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Cambio de color al pasar el cursor por encima */
+.custom-button:hover {
+    background-color: #228B22; /* Color verde bosque */
+}
+
+
+        /* Estilo para el fondo de la página */
+        body {
+            background: #C8E6C9; /* Color verde claro de fondo */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #333; /* Color de texto principal */
+        }
+
+        main h3 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* Estilo para las secciones */
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        div {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(50% - 20px);
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            background-color: #1B5E20; /* Color verde oscuro */
+            color: #fff; /* Color de texto blanco */
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Encabezado de la página -->
+    <header>
+        <h1><a href="#">Jardignomo</a></h1>
+        <h2 class="header-h2"><a href="#">EkoTek</a></h2>
+    </header>
+
+ <!-- Menú de navegación -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Tienda.html">Tienda</a></li>
+            <li><a href="Guias.html">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="../Sitio sin nombre 2/contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+     <div class="search-and-cart">
+    <a href="/cart">Carrito</a>
+    <form action="/search">
+      <input type="text" name="q" placeholder="Buscar">
+      <input type="submit" value="Buscar">
+    </form>
+  </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Botón 1 -->
+        <div class="custom-button">
+            <a href="#seccion-tienda">
+                <h3>Tienda de Auxiliares</h3>
+                <img src="img tienda/8 Img Tienda (Tienda Aux).png" alt="">
+            </a>
+        </div>
+
+        <!-- Botón 2 -->
+        <div class="custom-button">
+            <a href="modulo.html">
+                <h3>Jardignomo / Módulos</h3>
+                <img src="img tienda/8 Img Tienda (Jardig-Módulos).png" alt="">
+            </a>
+        </div>
+    </main>
+
+ 
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+    </footer>
+
+   
+</body>
+
+</html>
+

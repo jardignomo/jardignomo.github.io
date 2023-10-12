@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardignomo - Tu Asistente de Jardín Inteligente</title>
+
+    <!-- ESTILOS-COLORES GENERALES (CONTENIDO) -->
+    <style>
+        /* Estilo para el encabezado */
+        header {
+            background-color: #388E3C; /* Verde principal */
+            padding: 20px 0; /* Aumentado el espaciado superior e inferior */
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+         /* Estilos para Título producto(Jardignomo) y Empresa (Ekotek) */
+        header h1,
+        .header-h2 {
+            margin-top: 0.5px;
+            color: #FF5722; /* Naranja para Jardignomo */
+        }
+
+        .header-h2 {
+            color: #1976D2; /* Azul para EkoTek */
+        }
+
+        /* Estilos para el botón de Iniciar sesión/Regístrate */
+        .login-register-button {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+        }
+
+        .login-register-button a {
+            background-color: #43A047; /* Verde más claro */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        .login-register-button a:hover {
+            background-color: #1B5E20; /* Verde oscuro al pasar el ratón */
+        }
+        /* Estilos para el contenedor principal */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #E0F2F1; /* Verde claro */
+            padding: 20px;
+        }
+
+        /* Estilos para el menú pegajoso */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: #388E3C; /* Verde secundario */
+            z-index: 100;
+        }
+
+        /* Estilos para el sección de la imagen encima del menú */
+        .image-header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para el barra de navegación (menú) */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #388E3C; /* Verde secundario */
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1B5E20; /* Verde oscuro */
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+      /* Estilos para el carrusel de imágenes */
+.carousel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    width: 100%;
+    min-width: 800px;
+    object-fit: cover;
+    display: none; /* Oculta todas las imágenes por defecto */
+}
+
+.carousel-image.active {
+    display: block; /* Muestra la imagen activa */
+}
+
+        /* Estilo para el fondo de la página */
+        body {
+            background: #C8E6C9; /* Verde claro */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        main h3 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+       /* Estilos para el contenedor de imagen y descripción */
+.image-description-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #E0F2F1; /* Usar el mismo verde claro del fondo */
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.image-container img {
+    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente */
+}
+
+
+        /* Nuevos estilos para los contenedores internos */
+        .image-container {
+            flex: 1;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .description-container {
+            flex: 2;
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #1B5E20; /* Verde oscuro */
+            text-align: right;
+        }
+
+        /* Estilos para el botón de compra */
+        .buy-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #43A047; /* Verde más claro */
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .buy-button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            background-color: #1B5E20; /* Verde oscuro */
+            color: #fff;
+            padding: 30px;
+        }
+
+        /* Estilos para pantallas pequeñas (por ejemplo, teléfonos móviles) */
+        @media screen and (max-width: 768px) {
+            /* Define estilos específicos para pantallas pequeñas aquí */
+
+            /* Ejemplo: Ajustar el tamaño del encabezado y el menú */
+            header {
+                padding: 10px;
+            }
+
+            nav ul li {
+                margin-right: 15px;
+            }
+
+            /* Ejemplo: Reducir el margen entre las secciones */
+            main div {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Estilos para pantallas medianas (por ejemplo, tabletas) */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            /* Define estilos específicos para pantallas medianas aquí */
+
+            /* Ejemplo: Ajustar el tamaño del encabezado y el menú */
+            header {
+                padding: 15px; /* Aumentado el tamaño del encabezado */
+            }
+
+            nav ul li {
+                margin-right: 20px;
+            }
+
+            /* Ejemplo: Reducir el margen entre las secciones */
+            main div {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Estilos para pantallas grandes (por ejemplo, computadoras de escritorio) */
+        @media screen and (min-width: 1025px) {
+            /* Define estilos específicos para pantallas grandes aquí */
+
+            /* Ejemplo: Aumentar el tamaño del encabezado y el menú */
+            header {
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin-right: 25px; /* Aumentado el margen entre elementos del menú */
+            }
+
+            /* Ejemplo: Aumentar el margen entre las secciones */
+            main div {
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+
+</head>
+
+<!-- TEXTO GENERAL (CONTENIDO) -->
+<body>
+     <header>
+        <h1><a href="#">Jardignomo</a></h1>
+        <h2 class="header-h2"><a href="#">EkoTek</a></h2>
+        <div class="login-register-button">
+            <a href="../Sitio sin nombre 2/iniciar sesion.html">Iniciar sesión</a>
+            <a href="../Sitio sin nombre 2/registro.html">Regístrate</a>
+        </div>
+    </header>
+	
+	
+    <div class="image-header">
+        <img src="img inicio/1 Imagen Inicio.png" alt="Imagen del producto encima del menú">
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="../Sitio sin nombre 2/Tienda.html">Tienda</a></li>
+            <li><a href="../Sitio sin nombre 2/Guias.html">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="../Sitio sin nombre 2/contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h3 id="inicio">CONTENIDO PRINCIPAL</h3>
+
+        <div class="image-description-container">
+            <div class="image-container">
+                <img src="img inicio/2 Imag Inicio.jpg" alt="Imagen publicitaria jardignomo">
+            </div>
+            <div class="description-container">
+                <h4>Monitoreo Inteligente de Plantas</h4>
+                <p class="description">
+                    El Jardignomo es un dispositivo de monitoreo vía wifi personalizable que te permite cuidar tus plantas como nunca antes. Con alertas incorporadas y notificaciones contextuales en nuestra app móvil, estarás siempre al tanto de las condiciones ambientales de tus plantas.
+                </p>
+                <p class="description">
+                    Con Jardignomo, podrás controlar la humedad, la temperatura y otros factores importantes para el crecimiento de tus plantas desde la comodidad de tu dispositivo móvil. ¡Hace que el cuidado de tus plantas sea más fácil que nunca!
+                </p>
+            </div>
+        </div>
+
+     <!-- Carrusel de imágenes -->
+<div class="carousel-container">
+    <div class="carousel-images">
+        <img src="img inicio/3 Imagen Inicio (1ra Carrusel).png" alt="Image 1" class="carousel-image active">
+        <img src="img inicio/3 Imagen Inicio (2da Carrusel).png" alt="Image 2" class="carousel-image">
+		<img src="img inicio/3 Imagen Inicio (3ra Carrusel).png" alt="Image 2" class="carousel-image">
+		<img src="img inicio/3 Imagen Inicio (4ta Carrusel).png" alt="Image 2" class="carousel-image">
+        <!-- Agrega más imágenes si es necesario -->
+    </div>
+</div>
+
+
+
+        <div class="image-description-container">
+            <div class="image-container">
+                <img src="img inicio/4 Imagen Inicio.png" alt="Imagen de la aplicación">
+            </div>
+            <div class="description-container">
+                <h4>Control Total Desde Tu Teléfono</h4>
+                <p class="description">
+                    Con la aplicación Jardignomo, tendrás el control total sobre tus plantas desde la palma de tu mano. Simplemente escanea el código QR y descarga la aplicación en tu dispositivo móvil.
+                </p>
+                <p class="description">
+                    La aplicación te permite seleccionar el tipo de planta que estás cuidando y acceder a recomendaciones personalizadas para su cuidado. Nunca más te preocupes por si estás dando a tus plantas el cuidado adecuado.
+                </p>
+                <p class="description">
+                    Jardignomo te enviará notificaciones en tiempo real para recordarte cuándo es el momento de regar tus plantas y te mantendrá informado sobre el estado de tus plantas, incluyendo la humedad y la temperatura.
+                </p>
+            </div>
+        </div>
+
+        <div class="image-description-main-container">
+            <!-- Primer elemento -->
+            <div class="image-description-container">
+                <img src="img inicio/5 Imagen Inicio.png" alt="Imagen del jardignomo en espacio interior" class="image-container">
+                <p class="description">
+                    Personaliza tu Jardignomo para que se adapte perfectamente a cualquier espacio interior de tu casa o jardín. ¡Descubre opciones en la sección de carcasas y bases (Tienda)!
+                </p>
+            </div>
+
+            <!-- Segundo elemento -->
+            <div class="image-description-container">
+                <img src="img inicio/6 Imagen Inicio.png" alt="Imagen del jardignomo en espacio exterior" class="image-container">
+                <p class="description">
+                    La carcasa de nuestro Jardignomo es totalmente hermética, garantizando la protección de los circuitos y conexiones. Elige la carcasa que más te guste en la sección de carcasas y bases (Tienda).
+                </p>
+            </div>
+
+            <!-- Tercer elemento -->
+            <div class="image-description-container">
+                <img src="img inicio/7 Imagen Inicio.png" alt="Imagen del paquete de energía" class="image-container">
+                <p class="description">
+                    Nuestro producto cuenta con una excepcional autonomía gracias a su innovador diseño con panel solar incorporado. Esto asegura que tu "Jardignomo" esté siempre listo para cuidar de tus plantas sin depender de fuentes de energía externas.
+                </p>
+            </div>
+        </div>
+
+        <a href="../Sitio sin nombre 2/Tienda.html" class="buy-button">¡CÓMPRALO AQUÍ!</a>
+    </main>
+    <footer>
+        <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+    </footer>
+</body>
+	<script>
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    // Función para mostrar la siguiente imagen
+    function showNextImage() {
+        carouselImages[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % carouselImages.length;
+        carouselImages[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000);
+</script>
+
+
+</html>
